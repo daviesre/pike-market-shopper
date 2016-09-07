@@ -1,8 +1,11 @@
-<p>{{product.name}}</p>
-<p><img src={{product.image}} alt="" /></p>
-<p>{{product.description}}</p>
-<p>{{product.shop}}</p>
-<p>${{product.cost}}.00</p>
 
+<p>{{product.name}} -- ${{product.cost}}.00</p>
 
+<p><img src={{product.image}} {{action "showDetails"}}  alt="" /></p>
+
+{{# if areDetailsShowing}}
+  <p>Description: {{product.description}} </p>
+  <p>Shop: {{product.shop}} </p>
+  <button type="button" {{action "hideDetails"}}>Hide</button>
+{{/if}}
 <button {{action 'addToCart' product}}>Add to Cart</button>
