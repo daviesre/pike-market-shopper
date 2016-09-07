@@ -1,6 +1,11 @@
 <h1>Pike Market Shopper</h1>
+
+{{#each model.shops as |shop|}}
+  {{shop-details shop=shop}}
+{{/each}}
+
 <h5>Click an image to see shop and product details</h5>
-{{#each model as |product|}}
+{{#each model.products as |product|}}
   {{product-tile product=product}}
 {{/each}}
 
