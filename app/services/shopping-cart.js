@@ -8,10 +8,11 @@ export default Ember.Service.extend({
   },
   remove(item) {
     var index = this.get('items').indexOf(item);
-    console.log(item);
-    console.log(index);
     if (index >= 0) {
       this.get('items').removeAt(index);
     }
+  },
+  empty() {
+    this.set('items', []);
   }
 });
