@@ -1,4 +1,10 @@
 <h1>{{model.name}}</h1>
 <h4>Location: Booth #{{model.location}}</h4>
 
+{{#each model.products as |product|}}
+  {{product-tile product=product}}
+{{/each}}
+
+{{add-product saveProduct="saveProduct" shop=model}}
+
 {{#link-to 'index'}}Return home{{/link-to}}

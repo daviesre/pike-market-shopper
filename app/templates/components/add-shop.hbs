@@ -1,0 +1,20 @@
+{{#if addNewShop}}
+  <h1>New Shop</h1>
+    <div>
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          {{input value=name id="name"}}
+        </div>
+
+        <div class="form-group">
+          <label for="location">Booth Number</label>
+          {{input value=location id="location"}}
+        </div>
+
+        <button {{action 'saveShop'}}>Save</button>
+      </form>
+    </div>
+{{else}}
+    <button {{action 'shopFormShow'}}>New Shop</button>
+{{/if}}
