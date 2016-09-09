@@ -1,10 +1,11 @@
 {{#if shoppingCart.items}}
   {{#each shoppingCart.items as |item|}}
     <ul>
-      {{item.name}} -- ${{item.cost}}.00
+      {{item.name}} -- ${{item.cost}}
       <button {{action 'removeFromCart' item}}>Remove Item</button>
     </ul>
   {{/each}}
+  <button {{action 'tallyCart'}}>Show me the total</button>
   <button {{action 'emptyCart' product}}>Empty Cart</button>
   {{else}}
     <h3>There are no items in your cart</h3>

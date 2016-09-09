@@ -9,6 +9,9 @@ export default Ember.Component.extend({
     },
     emptyCart(product) {
       this.get('shoppingCart').empty(product);
+    },
+    tallyCart(product) {
+      this.get('shoppingCart').tally(product);
     }
   }
 });

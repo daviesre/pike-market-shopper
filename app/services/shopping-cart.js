@@ -14,5 +14,14 @@ export default Ember.Service.extend({
   },
   empty() {
     this.set('items', []);
+  },
+  tally(item) {
+    var allItems = this.get('items');
+    var totalCost = 0;
+    allItems.forEach(
+      function addCost(item)
+      { totalCost += item.cost; console.log(item.cost);}
+    );
+    console.log("Hello" + totalCost);
   }
-});
+})
